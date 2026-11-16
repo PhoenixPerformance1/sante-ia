@@ -25,24 +25,16 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="brand-link">
-        <span class="brand-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </span>
-        <div>
-          <span>Santé & IA</span>
-          <span class="brand-sub"> · Dr Elias Chaddouk</span>
-        </div>
+        <span class="brand-title">Santé & IA</span>
+        <span class="brand-sub">Dr Elias Chaddouk</span>
       </a>
 
       <nav class="nav-actions">
         <div class="nav-links">
-          <a href="#ouvrage" class="nav-link">L'Ouvrage</a>
-          <a href="#piliers" class="nav-link">Les Piliers</a>
-          <a href="#chapitre3" class="nav-link">Chapitre 3</a>
           <a href="#auteur" class="nav-link">L'Auteur</a>
-          <a href="#qrcode" class="nav-link">QR Code Livre</a>
+          <a href="#ouvrage" class="nav-link">L'Ouvrage</a>
+          <a href="#applications" class="nav-link">Applications</a>
+          <a href="#chapitre3" class="nav-link">Chapitre 3</a>
         </div>
 
         <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Mode sombre / clair">
@@ -67,22 +59,21 @@
     <section class="hero-section" id="ouvrage">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="status-indicator">
-            <span class="status-dot"></span>
-            <span>Parution prochaine · Hiver 2026 / 2027</span>
-          </div>
-
           <h1 class="hero-title">
             Manuel de bonnes pratiques pour dialoguer avec les modèles de langage (LLM)
           </h1>
 
           <p class="hero-subtitle">
-            Applications en médecine, enseignement, recherche et pratique clinique. Le guide méthodologique de référence conçu par un médecin pour maîtriser l'IA sans compromettre la rigueur clinique ni la sécurité des données.
+            Applications en médecine, enseignement, recherche et pratique clinique. Le guide méthodologique de référence conçu par un médecin pour maîtriser l'intelligence artificielle sans compromettre la rigueur clinique ni la sécurité des données.
           </p>
 
+          <div class="hero-meta">
+            Parution officielle · Hiver 2026 / 2027
+          </div>
+
           <div class="waitlist-card">
-            <h2 class="waitlist-title">Tenez-vous informé de la sortie de l'ouvrage</h2>
-            <p class="waitlist-desc">Recevez en avant-première les premiers extraits, les modèles de prompts et la date de parution officielle.</p>
+            <h2 class="waitlist-title">Tenez-vous informé de la parution</h2>
+            <p class="waitlist-desc">Recevez par e-mail la date de sortie officielle, les premiers extraits et les modèles de consignes.</p>
             
             <form class="waitlist-form" id="waitlistForm">
               <input type="email" id="emailInput" class="form-input" placeholder="Votre adresse e-mail professionnelle" required>
@@ -96,7 +87,7 @@
             </form>
 
             <div class="alert-feedback" id="alertFeedback"></div>
-            <p class="form-note">Aucun spam. Vos coordonnées sont exclusivement utilisées pour le suivi de la parution.</p>
+            <p class="form-note">Vos coordonnées sont strictement réservées au suivi de la parution.</p>
           </div>
         </div>
 
@@ -104,81 +95,81 @@
           <div class="book-frame">
             <picture>
               <source srcset="assets/couverture.webp" type="image/webp">
-              <img src="assets/couverture_manuel_llm_sante.png" alt="Manuel de bonnes pratiques pour dialoguer avec les modèles de langage (LLM) - Dr Elias Chaddouk" class="book-img" width="360" height="520">
+              <img src="assets/couverture_manuel_llm_sante.png" alt="Manuel de bonnes pratiques pour dialoguer avec les modèles de langage (LLM) - Dr Elias Chaddouk" class="book-img" width="350" height="505">
             </picture>
-          </div>
-
-          <div class="qr-caption-card">
-            <img src="assets/qr_sante_ia_2000px.png" alt="QR Code Santé IA" class="qr-mini">
-            <div class="qr-caption-text">
-              <strong>Lien permanent du manuel</strong>
-              <span>sante-ia.fr</span>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4 Pillars Section -->
-    <section class="section" id="piliers">
+    <!-- Author Section (Moved to Section 2 right after Hero) -->
+    <section class="section" id="auteur">
+      <div class="container">
+        <div class="author-card">
+          <div class="author-avatar-wrap">
+            <picture>
+              <source srcset="assets/dr_elias_chaddouk.webp" type="image/webp">
+              <img src="assets/dr_elias_chaddouk.png" alt="Dr Elias Chaddouk" class="author-avatar" width="150" height="150">
+            </picture>
+          </div>
+
+          <div class="author-content">
+            <h2 class="author-name">Dr Elias Chaddouk</h2>
+            <div class="author-role">Médecin Praticien · Auteur · Formateur</div>
+            <p class="author-bio">
+              Médecin en exercice depuis plus de 35 ans (né en 1962), praticien clinicien et formateur, le Dr Elias Chaddouk allie l'expérience du terrain médical à une analyse approfondie et pragmatique des modèles de langage.
+            </p>
+            <p class="author-bio">
+              Son ouvrage répond à une urgence de la pratique soignante : dépasser les effets de mode et les illusions technologiques pour doter chaque praticien d'une méthode de travail rigoureuse, reproductible et conforme aux exigences déontologiques du soin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications Section (The 4 domains from the subtitle, NO generic icons) -->
+    <section class="section" id="applications">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Les quatre piliers de l'ouvrage</h2>
-          <p class="section-desc">Une approche pragmatique, médicale et éthique qui transforme des requêtes sporadiques en outils de travail fiables et documentés.</p>
+          <h2 class="section-title">Les quatre applications de l'ouvrage</h2>
+          <p class="section-desc">Directement issues du sous-titre du manuel, quatre déclinaisons concrètes pour le quotidien du soignant, de l'interne et de l'universitaire.</p>
         </div>
 
-        <div class="pillars-grid">
-          <article class="pillar-card">
-            <div class="pillar-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Pratique clinique</h3>
-            <p class="pillar-text">Rédaction assistée de courriers, structuration des antécédents, préparation de RCP et préservation stricte des négations et valeurs critiques.</p>
+        <div class="applications-grid">
+          <article class="app-card">
+            <div class="app-number">01</div>
+            <h3 class="app-title">Pratique clinique</h3>
+            <p class="app-text">Rédaction assistée de courriers, structuration des antécédents, préparation de synthèses de RCP et préservation stricte des négations et valeurs critiques.</p>
           </article>
 
-          <article class="pillar-card">
-            <div class="pillar-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Enseignement & Pédagogie</h3>
-            <p class="pillar-text">Création de cas cliniques progressifs, génération ciblée de QCM d'entraînement pour internes et contextualisation de cours universitaires.</p>
+          <article class="app-card">
+            <div class="app-number">02</div>
+            <h3 class="app-title">Enseignement médical</h3>
+            <p class="app-text">Conception de cas cliniques progressifs, génération ciblée de QCM d'entraînement pour internes et contextualisation pédagogique de cours universitaires.</p>
           </article>
 
-          <article class="pillar-card">
-            <div class="pillar-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Recherche & Veille</h3>
-            <p class="pillar-text">Synthèse d'articles scientifiques, extraction méthodologique des résultats sans hallucination de sources et distinction faits / hypothèses.</p>
+          <article class="app-card">
+            <div class="app-number">03</div>
+            <h3 class="app-title">Recherche & Veille</h3>
+            <p class="app-text">Synthèse d'articles scientifiques, extraction méthodologique des résultats sans hallucination de sources et distinction stricte faits / hypothèses.</p>
           </article>
 
-          <article class="pillar-card">
-            <div class="pillar-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Conformité RGPD & HDS</h3>
-            <p class="pillar-text">Minimisation des données de santé, environnement autorisé, limites du label HDS et protocoles de validation humaine systématique.</p>
+          <article class="app-card">
+            <div class="app-number">04</div>
+            <h3 class="app-title">Gouvernance & RGPD</h3>
+            <p class="app-text">Minimisation des données de santé, environnement autorisé, limites effectives du label HDS et protocoles de validation humaine systématique.</p>
           </article>
         </div>
+      </div>
+    </section>
 
-        <!-- Chapter 3 Highlight -->
-        <div class="chapter-box" id="chapitre3">
-          <div class="chapter-badge">Aperçu Exclusif · Chapitre 3</div>
-          <h3 class="chapter-title">Construire un assistant personnalisé en santé</h3>
+    <!-- Chapter 3 Highlight -->
+    <section class="section" id="chapitre3">
+      <div class="container">
+        <div class="chapter-box">
+          <h2 class="chapter-title">Focus · Construire un assistant médical personnalisé</h2>
           <p class="chapter-desc">
-            Un assistant personnalisé n'est pas un nouveau modèle réentraîné : c'est un cadre de travail stabilisé associant prompt maître, sources documentaires sélectionnées, commandes opératoires et procédures réutilisables (skills).
+            Un assistant personnalisé n'est pas un nouveau modèle réentraîné : c'est un cadre de travail stabilisé associant prompt maître, sources documentaires sélectionnées, commandes contextuelles et procédures réutilisables.
           </p>
           <div class="command-grid">
             <div class="command-item">
@@ -197,60 +188,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Author Section -->
-    <section class="section" id="auteur">
-      <div class="container">
-        <div class="author-grid">
-          <div class="author-avatar-wrap">
-            <picture>
-              <source srcset="assets/dr_elias_chaddouk.webp" type="image/webp">
-              <img src="assets/dr_elias_chaddouk.png" alt="Dr Elias Chaddouk" class="author-avatar" width="160" height="160">
-            </picture>
-          </div>
-
-          <div class="author-content">
-            <h2 class="author-name">Dr Elias Chaddouk</h2>
-            <div class="author-role">Médecin Praticien · Auteur · Formateur</div>
-            <p class="author-bio">
-              Médecin engagé au quotidien dans la pratique clinique et l'enseignement, le Dr Elias Chaddouk étudie et transmet les méthodes rigoureuses de dialogue avec les intelligences artificielles génératives. Son ouvrage répond à un besoin fondamental : doter le corps médical d'une grille de lecture lucide, éthique et opérationnelle pour tirer le meilleur parti des LLM tout en protégeant l'intégrité de la décision médicale.
-            </p>
-          </div>
-        </div>
-
-        <!-- Official Print QR Code Download Box -->
-        <div class="qr-section" id="qrcode">
-          <div class="qr-display-box">
-            <img src="assets/qr_sante_ia_2000px.png" alt="QR Code officiel sante-ia.fr" class="qr-display-img">
-          </div>
-          <div>
-            <h3 class="qr-info-title">QR Code officiel de l'ouvrage</h3>
-            <p class="qr-info-desc">
-              Ce QR code renvoie de manière permanente vers l'adresse <strong>https://sante-ia.fr</strong>. Il est spécialement calibré avec un niveau élevé de correction d'erreurs (Level H) pour être inséré dans les pages imprimées du livre, les supports de cours ou les présentations.
-            </p>
-            <div class="qr-download-buttons">
-              <a href="assets/QR_CODE_SANTE_IA_300DPI.png" download="QR_CODE_SANTE_IA_300DPI.png" class="btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span>Télécharger PNG 300 DPI (Print)</span>
-              </a>
-
-              <a href="assets/qr_sante_ia.svg" download="qr_sante_ia.svg" class="btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-                <span>Télécharger SVG Vectoriel</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Site Footer -->
@@ -260,9 +197,10 @@
         © 2026 Dr Elias Chaddouk · Santé & IA · Tous droits réservés.
       </div>
       <div class="footer-links">
-        <a href="#ouvrage" class="footer-link">L'Ouvrage</a>
         <a href="#auteur" class="footer-link">L'Auteur</a>
-        <a href="mailto:contact@sante-ia.fr" class="footer-link">Contact</a>
+        <a href="#ouvrage" class="footer-link">L'Ouvrage</a>
+        <a href="#applications" class="footer-link">Applications</a>
+        <a href="mailto:pchaddouk@phoenixperformance.pro" class="footer-link">Contact</a>
       </div>
     </div>
   </footer>

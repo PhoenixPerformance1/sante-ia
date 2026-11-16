@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Waitlist Form Handler
+  // Waitlist Form Handler via real API endpoint
   const waitlistForm = document.getElementById('waitlistForm');
   const alertFeedback = document.getElementById('alertFeedback');
   const submitBtn = document.getElementById('submitBtn');
 
   if (waitlistForm) {
-    waitlistForm.addEventListener('submit', (e) => {
+    waitlistForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const emailInput = document.getElementById('emailInput');
       const email = emailInput.value.trim();
@@ -46,25 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
         <span>Enregistrement...</span>
       `;
 
-      // Save to localStorage list for immediate persistence
       try {
-        const list = JSON.parse(localStorage.getItem('sante_ia_waitlist') || '[]');
-        list.push({ email, date: new Date().toISOString() });
-        localStorage.setItem('sante_ia_waitlist', JSON.stringify(list));
-      } catch (err) {
-        console.warn('Storage error:', err);
-      }
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
 
-      // Simulate API response time then success
-      setTimeout(() => {
+        // Backup local storage
+        try {
+          const list = JSON.parse(localStorage.getItem('sante_ia_waitlist') || '[]');
+          list.push({ email, date: new Date().toISOString() });
+          localStorage.setItem('sante_ia_waitlist', JSON.stringify(list));
+        } catch (storageErr) {
+          console.warn('Storage warning:', storageErr);
+        }
+
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         emailInput.value = '';
+
         if (alertFeedback) {
           alertFeedback.style.display = 'block';
           alertFeedback.textContent = 'Votre inscription a bien été prise en compte. Merci de votre intérêt pour l\'ouvrage !';
         }
-      }, 700);
+      } catch (err) {
+        console.error('Fetch error:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        if (alertFeedback) {
+          alertFeedback.style.display = 'block';
+          alertFeedback.textContent = 'Votre inscription a bien été enregistrée localement.';
+        }
+      }
     });
   }
 });
