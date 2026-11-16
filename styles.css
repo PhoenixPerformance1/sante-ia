@@ -1,8 +1,9 @@
 /* Design System Anti-Slop - Santé & IA - Dr Elias Chaddouk */
+/* Light Mode Strict - Zéro Dark Mode */
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  /* Surfaces Light Mode (Default) */
+  /* Surfaces Light Mode Unique */
   --bg-page: #F8FAFC;
   --bg-surface: #FFFFFF;
   --bg-surface-subtle: #F1F5F9;
@@ -13,46 +14,19 @@
   --text-secondary: #475569;
   --text-muted: #64748B;
   
-  /* Brand Accent: Medical Cyan / Sky Blue */
+  /* Accent: Medical Cyan / Sky Blue */
   --accent-primary: #0284C7;
   --accent-hover: #0369A1;
   --accent-subtle: rgba(2, 132, 199, 0.08);
   --accent-border: rgba(2, 132, 199, 0.2);
   
-  /* Semantic */
-  --success: #10B981;
+  /* Borders & Shadows */
   --border-light: rgba(15, 23, 42, 0.08);
   --border-subtle: rgba(15, 23, 42, 0.04);
   
-  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
   --shadow-book: 0 20px 30px -10px rgba(15, 23, 42, 0.2), 0 10px 10px -5px rgba(15, 23, 42, 0.08);
-}
-
-[data-theme="dark"] {
-  --bg-page: #0B111E;
-  --bg-surface: #111A2E;
-  --bg-surface-subtle: #18233C;
-  --bg-hover: #22304E;
-  
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  
-  --accent-primary: #38BDF8;
-  --accent-hover: #7DD3FC;
-  --accent-subtle: rgba(56, 189, 248, 0.12);
-  --accent-border: rgba(56, 189, 248, 0.3);
-  
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
-  --shadow-book: 0 25px 40px -10px rgba(0, 0, 0, 0.7);
 }
 
 /* Reset & Box Sizing */
@@ -80,7 +54,7 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -94,20 +68,15 @@ body {
   }
 }
 
-/* Header & Nav */
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(248, 250, 252, 0.85);
+  background-color: rgba(248, 250, 252, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-[data-theme="dark"] .site-header {
-  background-color: rgba(11, 17, 30, 0.85);
 }
 
 .header-inner {
@@ -117,7 +86,6 @@ body {
   height: 4.25rem;
 }
 
-/* Pure typographical brand - zero generic icon */
 .brand-link {
   display: flex;
   flex-direction: column;
@@ -138,16 +106,10 @@ body {
   color: var(--text-secondary);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .nav-links {
   display: none;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 @media (min-width: 768px) {
@@ -168,32 +130,10 @@ body {
   color: var(--accent-primary);
 }
 
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-light);
-  background: var(--bg-surface);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.theme-toggle:hover {
-  background-color: var(--bg-surface-subtle);
-  color: var(--text-primary);
-}
-
 /* Hero Section */
 .hero-section {
   padding-top: 3.5rem;
   padding-bottom: 4rem;
-  position: relative;
 }
 
 @media (min-width: 1024px) {
@@ -217,7 +157,6 @@ body {
   }
 }
 
-/* Zero pill badge - direct H1 */
 .hero-title {
   font-size: 2.15rem;
   line-height: 1.15;
@@ -260,7 +199,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Waitlist Form */
+/* Waitlist Card */
 .waitlist-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-light);
@@ -299,7 +238,7 @@ body {
   flex: 1;
   min-height: 44px;
   padding: 0.65rem 1rem;
-  font-size: 16px; /* Strict rule: prevent iOS Safari auto-zoom */
+  font-size: 16px; /* Prévention zoom iOS Safari */
   border: 1px solid var(--border-light);
   background-color: var(--bg-surface-subtle);
   color: var(--text-primary);
@@ -330,7 +269,6 @@ body {
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.15s ease;
-  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -352,7 +290,7 @@ body {
   margin-top: 0.65rem;
 }
 
-/* Book Mockup Visual - Clean, no bottom caption */
+/* Book Mockup Visual */
 .hero-visual {
   display: flex;
   align-items: center;
@@ -367,7 +305,7 @@ body {
   box-shadow: var(--shadow-book);
   transition: transform 0.3s ease;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 @media (min-width: 640px) {
@@ -411,7 +349,7 @@ body {
   max-width: 42rem;
 }
 
-/* Author Section - Moved to Section 2 */
+/* Author Section */
 .author-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-light);
@@ -492,7 +430,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Applications Grid - Numbered 01-04, NO generic icons */
+/* Applications Grid (Numbered 01-04) */
 .applications-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -550,69 +488,6 @@ body {
   line-height: 1.55;
 }
 
-/* Chapter 3 Feature Box - Clean, no "APERÇU EXCLUSIF" badge */
-.chapter-box {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-light);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: var(--shadow-sm);
-}
-
-@media (min-width: 768px) {
-  .chapter-box {
-    padding: 2.5rem;
-  }
-}
-
-.chapter-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
-}
-
-.chapter-desc {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  max-width: 48rem;
-  line-height: 1.6;
-}
-
-.command-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-}
-
-@media (min-width: 640px) {
-  .command-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.command-item {
-  background-color: var(--bg-surface-subtle);
-  border: 1px solid var(--border-light);
-  border-radius: 0.5rem;
-  padding: 0.85rem 1rem;
-}
-
-.command-name {
-  font-family: monospace;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-  margin-bottom: 0.25rem;
-}
-
-.command-role {
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-}
-
 /* Footer */
 .site-footer {
   margin-top: auto;
@@ -666,6 +541,6 @@ body {
   border-radius: 0.5rem;
   font-size: 0.875rem;
   background-color: rgba(16, 185, 129, 0.1);
-  color: var(--success);
+  color: #059669;
   border: 1px solid rgba(16, 185, 129, 0.2);
 }

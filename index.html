@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,27 +29,11 @@
         <span class="brand-sub">Dr Elias Chaddouk</span>
       </a>
 
-      <nav class="nav-actions">
-        <div class="nav-links">
-          <a href="#auteur" class="nav-link">L'Auteur</a>
-          <a href="#ouvrage" class="nav-link">L'Ouvrage</a>
-          <a href="#applications" class="nav-link">Applications</a>
-          <a href="#chapitre3" class="nav-link">Chapitre 3</a>
-        </div>
-
-        <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Mode sombre / clair">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
+      <nav class="nav-links">
+        <a href="#auteur" class="nav-link">L'Auteur</a>
+        <a href="#ouvrage" class="nav-link">L'Ouvrage</a>
+        <a href="#applications" class="nav-link">Applications</a>
+        <a href="mailto:pchaddouk@phoenixperformance.pro" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
@@ -79,10 +63,6 @@
               <input type="email" id="emailInput" class="form-input" placeholder="Votre adresse e-mail professionnelle" required>
               <button type="submit" id="submitBtn" class="btn-primary" data-action="subscribe-waitlist">
                 <span>Être informé</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
               </button>
             </form>
 
@@ -102,7 +82,7 @@
       </div>
     </section>
 
-    <!-- Author Section (Moved to Section 2 right after Hero) -->
+    <!-- Author Section (Section 2) -->
     <section class="section" id="auteur">
       <div class="container">
         <div class="author-card">
@@ -127,7 +107,7 @@
       </div>
     </section>
 
-    <!-- Applications Section (The 4 domains from the subtitle, NO generic icons) -->
+    <!-- Applications Section (Section 3) -->
     <section class="section" id="applications">
       <div class="container">
         <div class="section-header">
@@ -159,32 +139,6 @@
             <h3 class="app-title">Gouvernance & RGPD</h3>
             <p class="app-text">Minimisation des données de santé, environnement autorisé, limites effectives du label HDS et protocoles de validation humaine systématique.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Chapter 3 Highlight -->
-    <section class="section" id="chapitre3">
-      <div class="container">
-        <div class="chapter-box">
-          <h2 class="chapter-title">Focus · Construire un assistant médical personnalisé</h2>
-          <p class="chapter-desc">
-            Un assistant personnalisé n'est pas un nouveau modèle réentraîné : c'est un cadre de travail stabilisé associant prompt maître, sources documentaires sélectionnées, commandes contextuelles et procédures réutilisables.
-          </p>
-          <div class="command-grid">
-            <div class="command-item">
-              <div class="command-name">/truth</div>
-              <div class="command-role">Distinguer formellement les faits établis des incertitudes cliniques.</div>
-            </div>
-            <div class="command-item">
-              <div class="command-name">/medical</div>
-              <div class="command-role">Restituer uniquement les données explicitement documentées dans la source.</div>
-            </div>
-            <div class="command-item">
-              <div class="command-name">/critic</div>
-              <div class="command-role">Rechercher les contradictions, les oublis et les ambiguïtés textuelles.</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
