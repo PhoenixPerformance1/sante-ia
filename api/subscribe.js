@@ -22,13 +22,45 @@ export default async function handler(req, res) {
     const lead = {
       email,
       source: 'sante-ia.fr',
+      consent: 'book_and_newsletter',
       submittedAt: new Date().toISOString(),
       userAgent: req.headers['user-agent'] || null
     };
 
     console.log('[SANTE-IA WAITLIST]', JSON.stringify(lead));
 
-    // Si une URL de webhook Brevo ou CRM est définie dans les variables d'environnement Vercel
+    // Intégration Brevo native si BREVO_API_KEY est configurée
+    if (process.env.BREVO_API_KEY) {
+      try {
+        const brevoPayload = {
+          email,
+          attributes: {
+            SOURCE: 'sante-ia.fr',
+            DATE_INSCRIPTION: lead.submittedAt
+          },
+          updateEnabled: true
+        };
+
+        if (process.env.BREVO_LIST_ID) {
+          brevoPayload.listIds = [Number(process.env.BREVO_LIST_ID)];
+        }
+
+        const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': process.env.BREVO_API_KEY
+          },
+          body: JSON.stringify(brevoPayload)
+        });
+
+        console.log('[BREVO SYNC]', brevoRes.status);
+      } catch (brevoErr) {
+        console.warn('[BREVO ERROR]', brevoErr);
+      }
+    }
+
+    // Webhook générique si configuré
     if (process.env.BREVO_WEBHOOK_URL) {
       try {
         await fetch(process.env.BREVO_WEBHOOK_URL, {
